@@ -4,7 +4,7 @@
 with torch.no_grad():
     predicted_data_list = []
     label_list = []
-    for i, samples in enumerate(test_dataloader):
+    for i, samples in enumerate(dataloader):
         x_test, y_test = samples
         x_test = x_test.view(-1, sequence_length, input_size).to(device)
         y_test = y_test.to(device)
