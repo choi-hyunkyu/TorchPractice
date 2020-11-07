@@ -44,3 +44,20 @@ print(original_data_df.head())
 
 # 데이터 셔플
 shuffled_df = df.sample(frac = 1)
+
+# 결측치 0으로 치환
+filled_df = df.fillna(0)
+
+# 결측치 특정 문자열로 치환
+filled_df = df.fillna("string")
+
+# 결측치 앞 방향 값으로 치환
+filled_df = df.fillna('ffill')
+filled_df = df.fillna('pad')
+
+# 결측치 뒷 방향 값으로 치환
+filled_df = df.fillna('bfill')
+filled_df = df.fillna('backfill')
+
+# 결측치 변수별 평균으로 대체
+filled_df = df.fillna(df.mean())
