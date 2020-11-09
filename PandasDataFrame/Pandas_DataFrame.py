@@ -61,3 +61,34 @@ filled_df = df.fillna('backfill')
 
 # 결측치 변수별 평균으로 대체
 filled_df = df.fillna(df.mean())
+
+
+'''
+형태소 분석 (Komoran : 가장 빠른 분석 방법)
+'''
+from konlpy.tag import Komoran
+import pandas as pd
+
+print('step1')
+tokenizer = Komoran()
+
+print('step2')
+data_df = pd.read_csv('./data/chatbot_data.csv')
+
+print('step3-1')
+Q = data_df['Q'].tolist()
+
+print('step3-2')
+A = data_df['A'].tolist()
+
+print('step4-1')
+sptd_Q = [tokenizer.morphs(Q[i]) for i in range(len(Q))]
+
+print('step4-2')
+sptd_A = [tokenizer.morphs(A[i]) for i in range(len(A))]
+
+print('step5')
+sptd_Q
+
+print('step5')
+sptd_A
