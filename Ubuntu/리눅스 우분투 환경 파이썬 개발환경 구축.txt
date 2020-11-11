@@ -20,6 +20,15 @@
 8. sudo apt-get install libffi-dev
 
 '''
+우분투 가상환경 설치
+'''
+1. pip3 install virtualenv
+2. python3 -m virtualenv venv-python3.8
+3. source /home/choihk/chatbot/bin/activate
+4. deactivate
+
+
+'''
 파이썬 설치
 '''
 1. wget https://www.python.org/ftp/python/3.8.6/Python-3.8.6.tgz
@@ -35,6 +44,7 @@ pip3 설치
 '''
 sudo apt-get install python3-pip
 sudo apt-get install python3-setuptools
+python3.8 -m pip install --upgrade pip
 
 '''
 라이브러리 설치
@@ -54,3 +64,31 @@ sudo pip3 list
 1. CPU: pip3 install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 2. GPU: pip3 install torch torchvision
+
+'''
+KoNLPy 설치
+
+sudo apt update
+sudo apt install default-jre
+sudo apt install default-jdk
+pip3 install konlpy
+
+'''
+1. sudo apt-get install openjdk-8-jdk python3-dev
+2. pip3 install konlpy
+3. pip3 install JPype1-py3
+4. sudo vim /etc/environment 내부 진입 후 JAVA_HOME=" /usr/lib/jvm/java-9-openjdk-amd64"  입력 후 저장
+5. source /etc/environment
+6. echo $JAVA_HOME
+
+'''
+pip 패키지 관리
+'''
+1. 가상환경 접속
+2. pip3 freeze 목록확인
+3. pip3 freeze > requirements.txt
+
+'''
+requirements.txt 설치 방법
+'''
+1. pip install -r requirements.txt
