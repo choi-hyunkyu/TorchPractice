@@ -19,6 +19,9 @@ df['NewColumn_name'] = 'Values'
 df = df.rename(columns = {'old_name_1': 'new_name_1', 'old_name_2': 'new_name_2'})
 df.columns = ['new_name_1', 'new_name_2']
 
+# 데이터프레임 공백 행 제거
+df = df.dropna().reset_index(drop=True)
+
 # 데이터프레임 컬럼 삭제
 df = df.drop(['name_1', 'name_2'], axis = 1)
 df.drop(['name_1', 'name_2'], axis = 1, replace = True)
